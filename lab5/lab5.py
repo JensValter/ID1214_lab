@@ -51,3 +51,5 @@ for i in depths:
     print("f1 score: ", f1)
     print("accuracy: ", accuracy)
     print(" ")
+
+
