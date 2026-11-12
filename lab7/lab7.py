@@ -54,6 +54,7 @@ accuracy = accuracy_score(y_test, predictions)
 
 print("Test accuracy:", accuracy)
 
+
 cm = confusion_matrix(y_test, predictions)
 
 display = ConfusionMatrixDisplay(
@@ -69,15 +70,15 @@ print("")
 print("task4")
 
 for depth in [1, 2, 3, 5, None]:
-    model = DecisionTreeClassifier(
+    new_model = DecisionTreeClassifier(
         max_depth=depth,
         random_state=42
     )
 
-    model.fit(X_train, y_train)
+    new_model.fit(X_train, y_train)
 
-    train_predictions = model.predict(X_train)
-    test_predictions = model.predict(X_test)
+    train_predictions = new_model.predict(X_train)
+    test_predictions = new_model.predict(X_test)
 
     train_accuracy = accuracy_score(
         y_train, train_predictions
@@ -95,6 +96,7 @@ for depth in [1, 2, 3, 5, None]:
 
 
 #task 5
+
 plt.figure(figsize=(16, 8))
 
 plot_tree(
